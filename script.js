@@ -4,6 +4,7 @@ console.log(secretNumber);
 
 
 let score = 20;
+let highscore = 0;
 
 const check = document.querySelector('.check');
 
@@ -17,7 +18,11 @@ check.addEventListener('click', () => {
         document.querySelector('.message').textContent = " 🎉 Correct Number!"
         document.querySelector('.number').textContent = secretNumber;
         document.querySelector('.title').textContent= "🎉 You Win!!!"
-        document.querySelector('.highscore').textContent = score;
+        if(score>highscore){
+            highscore = score;
+        document.querySelector('.highscore').textContent = highscore;
+
+        }
 
 
         document.body.style.backgroundColor = "#60b347";
@@ -28,8 +33,9 @@ check.addEventListener('click', () => {
         if (score > 1) {
             let lives = guess > secretNumber ? '📈 Too high!' : '📉 Too low!';
             document.querySelector('.message').textContent = lives;
-            document.querySelector('.score').textContent = score;
             --score;
+
+            document.querySelector('.score').textContent = score;
 
 
         } else if (score == 1) {
