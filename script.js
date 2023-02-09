@@ -56,4 +56,6 @@ document.querySelector('.again').addEventListener('click', function () {
     document.querySelector('.guess').disabled = false;
     document.querySelector('body').style.backgroundColor = '#222';
     document.querySelector('.number').style.width = '15rem';
+    document.querySelector('.title').textContent= "Guess My Number!"
+
 });
