@@ -3,7 +3,7 @@ console.log(secretNumber);
 
 
 
-let score = 20;
+let score = 10;
 let highscore = 0;
 
 const check = document.querySelector('.check');
@@ -43,6 +43,7 @@ check.addEventListener('click', () => {
             document.querySelector('.check').disabled = true;
             document.querySelector('.guess').disabled = true;
             document.querySelector('.score').textContent = score;
+            document.querySelector('.title').textContent= "💥 You loose!!!"
 
 
         }
@@ -51,7 +52,7 @@ check.addEventListener('click', () => {
 
 
 document.querySelector('.again').addEventListener('click', function () {
-    score = 20;
+    score = 10;
     secretNumber = Math.floor(Math.random() * 100) + 1;
 
     document.querySelector('.message').textContent = 'Start guessing...';
